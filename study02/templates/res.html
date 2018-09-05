@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<ul>
+    {% for i in res %}
+        <li>{{ i.id }}</li>
+        <li>{{ i.name }}</li>
+        <li>{{ i.desc }}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

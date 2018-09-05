@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zzz</title>
+</head>
+<body>
+<ul>
+    {% for p in person %}
+    <li>{{ p.id }}</li>
+    <li>{{ p.num }}</li>
+    <li>{{ p.hobby }}</li>
+    <li><a href="/getinfo.html/?nid={{ p.id }}">{{ p.name }}</a></li>
+
+    {% endfor %}
+</ul>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>idcard</title>
+</head>
+<body>
+    <ul>
+        {% for idcard in idcard %}
+            <li>{{ idcard.id }}</li>
+            <li><a href="{% url 'person' idcard.id %}">{{ idcard.num }}</a></li>
+            <li>{{ idcard.unite }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

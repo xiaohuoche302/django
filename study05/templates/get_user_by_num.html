@@ -1,0 +1,8 @@
+{%extends 'index.html'%}
+{% block content %}
+<ul>
+    {% for i in users %}
+    <li>第{{ i.num }}集</li>
+    {% endfor %}
+</ul>
+{% endblock %}

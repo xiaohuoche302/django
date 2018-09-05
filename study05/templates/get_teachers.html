@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>teacher</title>
+</head>
+<body>
+<ul>
+    {% for t in teachers %}
+        {% if t.id == 2 %}
+            <li style="color: aqua">{{ t.name }}</li>
+            <li style="color: aqua">{{ t.salary }}</li>
+        {% else %}
+            <li>{{ t.name }}</li>
+            <li>{{ t.salary }}</li>
+        {% endif %}
+        {% empty %}
+        <h1>没有数据时显示这句发</h1>
+
+        <p>{{ t.get_base_msg }}</p>
+    {% endfor %}
+</ul>
+<p>{{ teachers.0.get_base_msg }}</p>
+
+
+    <ul>
+        {% for i in teachers %}
+            {% if forloop.counter == 1 %}
+                <li style="color: aqua">第{{ forloop.counter }}数据是{{ i.get_base_msg }}</li>
+            {% else %}
+                <li style="color: antiquewhite">第{{ forloop.counter }}数据是{{ i.get_base_msg }}</li>
+            {% endif %}
+        {% endfor %}
+
+    </ul>
+    {# 这是一种单行注释，不返给前端页面 #}
+    {% comment %}
+    这是一种多行注释，不返给前端页面
+    {% endcomment %}
+    {% for i in teachers %}
+        {% widthratio i.age 1 2 %}
+    {% endfor %}
+    {% for i in teachers %}
+        {% if i.id|divisibleby:2 %}
+        {% endif %}
+    {% endfor %}
+<hr/>
+    {% ifequal teachers.0.id 2 %}
+        等于
+    {% else %}
+        不等于
+    {% endifequal %}
+<hr/>
+    {{ teachers.1.name|lower }}
+    new:{{ teachers.1.age|add:10 }} old:{{ teachers.1.age }}
+<hr/>
+    join操作 {{ teachers|join:"+" }}
+</body>
+</html>

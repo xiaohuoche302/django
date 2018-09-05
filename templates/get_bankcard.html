@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+<ul>
+    {% for i in bankcard %}
+    <li>{{ i.num }}</li>
+    <li><a href="{% url 'get_person' i.id %}">{{ i.bank_name }}</a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>

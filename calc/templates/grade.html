@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add</title>
+</head>
+<body>
+<ul>
+	{% for i in grade %}
+        <li>id : {{ i.id }}</li>
+        <li><a href="{% url 'grade_one' i.id %} ">{{i.gname}}</a></li>
+        <li>{{i.gdate}}</li>
+        <li>{{i.ggirlnum}}</li>
+        <li>{{i.gboynum}}</li>
+	{% endfor %}
+</ul>
+	
+</body>
+</html>

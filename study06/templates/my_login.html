@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+    <form action="{% url 'my_login_v1' %}" method="post">
+        <input type="text" name="u_name" placeholder="请输入用户名">
+        <input type="password" name="pwd" placeholder="密码">
+        <input type="submit" value="登录">
+        {% csrf_token %}
+
+    </form>
+
+</body>
+</html>
